@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote</title>
+</head>
+<body>
+    <div id="quote"></div>
+
+    <script>
+        window.onload = function (){
+            let div = document.querySelector("#quote");
+            setInterval(function(){
+                    getQuote(function(data){
+                    div.innerHTML = data.quote;
+                })
+            },2000)
+        }
+        function getQuote(callback){
+            fetch('https://dummyjson.com/quotes/random')
+            .then(res => res.json())
+            .
+            then(callback);
+        }
+
+    </script>
+</body>
+</html>
